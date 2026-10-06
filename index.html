@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gull | فروشگاه لباس</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Tahoma', sans-serif;
+        }
+        :root {
+            --primary: #b8860b;
+            --dark: #2c2c2c;
+            --light: #f9f9f9;
+            --gold: #d4af37;
+        }
+        body {
+            background: #fff;
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        header {
+            background: linear-gradient(135deg, var(--dark), #444);
+            color: white;
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .logo {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--gold);
+            text-decoration: none;
+        }
+        nav a {
+            color: white;
+            margin: 0 1rem;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: var(--gold);
+        }
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1445205170230-053b83016050?w=1200');
+            height: 50vh;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+        }
+        .hero h1 {
+            font-size: 3rem;
+            color: var(--gold);
+            margin-bottom: 1rem;
+        }
+        .hero p {
+            font-size: 1.3rem;
+            max-width: 600px;
+            margin-bottom: 2rem;
+        }
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            margin: 3rem 0 2rem;
+            color: var(--dark);
+            position: relative;
+        }
+        .section-title::after {
+            content: '';
+            width: 80px;
+            height: 3px;
+            background: var(--gold);
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .products {
+            padding: 2rem 5%;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+        .product-card {
+            border: 1px solid #eee;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+            background: white;
+        }
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        .product-img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            background: #f5f5f5;
+        }
+        .product-info {
+            padding: 1.2rem;
+        }
+        .product-name {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 0.8rem;
+            color: var(--dark);
+        }
+        .price {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+        .afn {
+            background: #fef3c7;
+            color: #92400e;
+            padding: 0.4rem 0.8rem;
+            border-radius: 6px;
+            font-weight: 600;
+        }
+        .usd {
+            background: #d1fae5;
+            color: #065f46;
+            padding: 0.4rem 0.8rem;
+            border-radius: 6px;
+            font-weight: 600;
+        }
+        .buy-btn {
+            width: 100%;
+            background: #25d366;
+            color: white;
+            border: none;
+            padding: 0.9rem;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            transition: background 0.3s;
+            text-decoration: none;
+        }
+        .buy-btn:hover {
+            background: #1da855;
+        }
+        .contact {
+            background: var(--light);
+            padding: 3rem 5%;
+            text-align: center;
+            margin-top: 3rem;
+        }
+        .whatsapp-link {
+            display: inline-block;
+            background: #25d366;
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 1rem;
+        }
+        footer {
+            background: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            .hero h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <a href="#" class="logo">Gull</a>
+    <nav>
+        <a href="#home">خانه</a>
+        <a href="#products">محصولات</a>
+        <a href="#contact">تماس</a>
+    </nav>
+</header>
+
+<section class="hero" id="home">
+    <h1>فروشگاه لباس Gull</h1>
+    <p>انواع لباس‌های شیک و با کیفیت • پرداخت به افغانی و دالر • خرید مستقیم از طریق واتس‌اپ</p>
+    <a href="#products" style="background:var(--gold); color:white; padding:0.9rem 2rem; border-radius:50px; text-decoration:none; font-weight:bold; margin-top:1rem;">مشاهده محصولات</a>
+</section>
+
+<h2 class="section-title" id="products">محصولات ما</h2>
+<section class="products">
+    <!-- محصول ۱ -->
+    <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=400" alt="لباس زنانه" class="product-img">
+        <div class="product-info">
+            <h3 class="product-name">لباس مجلسی زنانه</h3>
+            <div class="price">
+                <span class="afn">۲,۵۰۰ افغانی</span>
+                <span class="usd">۳۵ دالر</span>
+            </div>
+            <a href="https://wa.me/93775353317?text=سلام، من لباس مجلسی زنانه را می‌خواهم." class="buy-btn" target="_blank">
+                🛒 خرید از واتس‌اپ
+            </a>
+        </div>
+    </div>
+
+    <!-- محصول ۲ -->
+    <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1552374196-1ab2a1c593e8?w=400" alt="لباس مردانه" class="product-img">
+        <div class="product-info">
+            <h3 class="product-name">کت و شلوار مردانه</h3>
+            <div class="price">
+                <span class="afn">۴,۲۰۰ افغانی</span>
+                <span class="usd">۵۵ دالر</span>
+            </div>
+            <a href="https://wa.me/93775353317?text=سلام، من کت و شلوار مردانه را می‌خواهم." class="buy-btn" target="_blank">
+                🛒 خرید از واتس‌اپ
+            </a>
+        </div>
+    </div>
+
+    <!-- محصول ۳ -->
+    <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1578587018452-892babe41f37?w=400" alt="لباس کودک" class="product-img">
+        <div class="product-info">
+            <h3 class="product-name">ست لباس کودک</h3>
+            <div class="price">
+                <span class="afn">۱,۸۰۰ افغانی</span>
+                <span class="usd">۲۵ دالر</span>
+            </div>
+            <a href="https://wa.me/93775353317?text=سلام، من ست لباس کودک را می‌خواهم." class="buy-btn" target="_blank">
+                🛒 خرید از واتس‌اپ
+            </a>
+        </div>
+    </div>
+
+    <!-- محصول ۴ -->
+    <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1581655353564-df123a1eb820?w=400" alt="پیراهن زنانه" class="product-img">
+        <div class="product-info">
+            <h3 class="product-name">پیراهن شیک زنانه</h3>
+            <div class="price">
+                <span class="afn">۱,۴۰۰ افغانی</span>
+                <span class="usd">۲۰ دالر</span>
+            </div>
+            <a href="https://wa.me/93775353317?text=سلام، من پیراهن زنانه را می‌خواهم." class="buy-btn" target="_blank">
+                🛒 خرید از واتس‌اپ
+            </a>
+        </div>
+    </div>
+</section>
+
+<section class="contact" id="contact">
+    <h2 class="section-title">تماس با ما</h2>
+    <p style="font-size:1.2rem; max-width:600px; margin:0 auto;">برای سفارش و اطلاعات بیشتر، از طریق واتس‌اپ با ما در ارتباط باشید.</p>
+    <a href="https://wa.me/93775353317" class="whatsapp-link" target="_blank">
+        💬 0775353317
+    </a>
+</section>
+
+<footer>
+    <p>© ۲۰۲۶ فروشگاه لباس Gull • تمام حقوق محفوظ است</p>
+</footer>
+
+</body>
+</html>
